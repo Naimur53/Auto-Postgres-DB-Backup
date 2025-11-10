@@ -31,9 +31,9 @@ const genericEmailTemplate = ({backupStatus, backupFileName, completedAt, error}
           <tr>
             <td style="padding: 30px; color: #333333; font-size: 16px; line-height: 1.5;">
 
-              <p>Hello Admin,</p>
+              <p>Hello Acctbazaar Admin,</p>
 
-              <p>Your automated database backup is ${backupStatus}. Here are the details:</p>
+              <p>Your database backup is ${backupStatus}. Here are the details:</p>
 
               <!-- Status Box -->
               <p style="background-color: ${statusBgColor}; color: ${statusTextColor}; padding:15px; border-radius:5px; font-weight:bold;">
