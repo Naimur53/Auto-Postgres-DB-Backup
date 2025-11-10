@@ -81,7 +81,7 @@ async function runBackup(retry = 0) {
   const isWindows = os.platform().startsWith("win");
 
   const cmd = isWindows
-    ? `set PGPASSWORD=${PG_PASSWORD} && pg_dump -h ${PG_HOST} -p ${PG_PORT} -U ${PG_USER} -d ${PG_DATABASE} -F c -f "${sqlFile}"`
+    ? `set "PGPASSWORD=${PG_PASSWORD}" && pg_dump -h ${PG_HOST} -p ${PG_PORT} -U ${PG_USER} -d ${PG_DATABASE} -F c -f "${sqlFile}"`
     : `PGPASSWORD="${PG_PASSWORD}" pg_dump -h ${PG_HOST} -p ${PG_PORT} -U ${PG_USER} -d ${PG_DATABASE} -F c -f "${sqlFile}"`;
 
   console.log(`\n[${new Date().toLocaleString()}] 🟢 Starting backup...`);

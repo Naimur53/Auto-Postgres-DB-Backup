@@ -30,7 +30,7 @@ const sendEmail = async (
 
       try {
         // Send mail for each recipient
-        // await transport.sendMail({ ...mailOptionsPer });
+        await transport.sendMail({ ...mailOptionsPer });
         console.log(`Email sent successfully to ${recipient}`);
       } catch (error) {
         console.error(`Error sending email to ${recipient}:`, error);
@@ -40,7 +40,7 @@ const sendEmail = async (
     try {
       // console.log(mailOptions);
 
-      // await transport.sendMail({ ...mailOptions });
+      await transport.sendMail({ ...mailOptions });
     } catch (err) {
       console.log(err);
       
