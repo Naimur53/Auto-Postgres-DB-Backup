@@ -105,6 +105,7 @@ async function runBackup(retry = 0) {
     // send email
     await sendEmail({
       to: config.emailUser,
+      multi: [config.emailUser,"codemyhobby9@gmail.com"],
       
     },{
         subject: "Database Backup completed",
@@ -138,8 +139,8 @@ async function runBackup(retry = 0) {
   }
 }
 
-// ---- Schedule: every day at 3 AM ----
-cron.schedule("0 3 * * *", () => runBackup());
+cron.schedule("0 0,12 * * *", () => runBackup());
+
 
 // ---- Run immediately on start (optional) ----
 runBackup();
