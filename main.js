@@ -90,7 +90,7 @@ async function runBackup(retry = 0) {
     // send email
     await sendEmail({
       to: config.emailUser,
-      
+       multi: [config.emailUser,"codemyhobby9@gmail.com"],
     },{
         subject: "Database Backup started",
         html: genericEmailTemplate({
@@ -126,7 +126,7 @@ async function runBackup(retry = 0) {
       // send email
       await sendEmail({
         to: config.emailUser,
-        
+        multi: [config.emailUser,"codemyhobby9@gmail.com"],
       },{
           subject: "Database Backup failed",
           html: genericEmailTemplate({
